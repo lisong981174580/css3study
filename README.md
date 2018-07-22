@@ -133,14 +133,181 @@ div::selection{
 ```
 ### 二、属性
 #### 边框与圆角
+* border 边框
 * border-radius边框圆角
 ```
 //单位:px、%、rem、em、vm
 //如果是%则相对于元素本身
 //椭圆
-border-radius:50%
+  border-radius:50%
 ```
-* border 边框
+* border-image 边框图片
+
+#### 阴影属性
+* box-shadoow属性
+> 可以设置一个或多个下拉阴影的框
+```
+box-shadow:50px 30px 0 0 yellow inset;//水平偏移 垂直偏移 模糊程度 扩展距离  颜色 内阴影
+```
+
+#### background属性
+> background:clor position  size repeat origin  clip attachment image;
+* background-clip:border-box|padding-box|content-box;//背景图片显示区域
+* background-origin:border-box|padding-box|content-box;//指定background-position属性应该是相对位置;
+* background-size:length|precentage|contain|cover;//图像尺寸
+> cover:把背景图片缩放到最大一个不留白的程度  完整填充
+> contain:把背景图片完整显示出来，但是可能留白
+* background-image:url(),url();//多图片显示
+* background-attachment:fiexd;//是否滚屏
+
+#### 渐变
+##### 线性渐变
+* background:liner-gradient(direction|angle,color-stop1 10%,color-stop2 50%,...) //线性渐变
+* background:repeating-liner-gradient(direction|angle,color-stop1 10%,color-stop2 20%,...) //重复线性渐变
+
+##### 径向渐变
+> 从中间向外拉伸
+* background:radial-gradient(center,shape size,color-stop1 10%,color-stop2 50%,...) //径向渐变
+* background:repeating-radial-gradient(center,shape size,color-stop1 10%,color-stop2 50%,...) //重复径向渐变
+
+#### 文本属性
+* text-shadow:h-shadow v-shadow  blur  color; //文本阴影
+* text-outline:thickness blur color ; //规定文本轮廓(没有浏览器支持)
+* word-break:normal|break-all|keep-all;//规定文本自动换换行的处理方法
+* word-wrap:normal|break-word; //允许长单词或url地址换行到下一行
+* text-align-last:auto|left|right|center|justify|start|end|initial|inherit;//文本最后一行的对齐方式
+
+#### 字体属性
+> 字体库网址：https://www.fontsquirrel.com/tools/webfont-generator
+* @font-face
+```
+@font-face{
+  font-family:字体名称;
+  src:字体存放路径;
+  font-weight:;
+  font-style:;
+}
+```
+#### css3转换（tansform属性）
+* 2d转换
+```
+ /*旋转*/
+    transform: rotate(20deg);
+    /*移动*/
+    transform: translateX(20px);
+    transform: translateY(20px);
+    transform: translate(20px,20px);
+    /*缩放*/
+    transform: scaleX(1);
+    transform: scaleY(1);
+    transform: scale(1,1);
+    /*扭曲*/
+    transform: skewX(15deg);
+    transform: skewY(15deg);
+    transform: skew(15deg,15deg);
+```
+* 3d转换
+```
+   /*旋转*/
+    transform: rotateX(20deg);
+    transform: rotateY(20deg);
+    transform: rotateZ(20deg);
+    transform: rotate3d(1,1,1,20deg);
+    /*移动*/
+    transform: translateX(20px);
+    transform: translateY(20px);
+    transform: translateZ(20px);
+    transform: translate3d(20px,20px,20px);
+
+    /*缩放*/
+    transform: scaleX(1);
+    transform: scaleY(1);
+    transform: scaleZ(1);
+    transform: scale3d(1,1,1);
+```
+* transform-origin属性
+> transform-origin属性允许您更改转换元素的位置
+```
+//基本点在左上角
+ transform-origin: left top;
+```
+* 矩阵
+```
+transform: matrix(a,b,c,d,tx,ty);
+
+```
+* transform-style
+> 指定嵌套元素怎样在三维空间中呈现
+```
+ transform-style:preserve-3d|flat;
+```
+* perspective
+> 指定观察者与[z=0]平面的距离，使具有三维位置变换的元素产生透视效果
+```
+ perspective: 100000|none;
+
+```
+* backface-visibility:visibity|hidden;
+> 指定元素背面向用户是否可见
+
+#### css3过度（transition属性）
+> transition:property duration timing-funcion  delay;
+> 允许css的属性值在一定的时间内平滑地过度
+* transition-property:none|all|property;// 参与过度的属性
+* transition-duration: time;//过度时间
+* transition-timing-function: ease|liner|ease-in(很多）;
+* transition-delay: time;//延时
+
+#### css3动画（animation)
+> animation:name  duration  timing-function  delay iteration-count direction fill-mode play-state
+> 视觉暂留原理 0.34s
+*  animation-name:keyfreamename|none; //动画名称
+*  animation-duration: time;//动画持续时间
+*  animation-timing-function: ease|liner|ease-in(很多）;//动画方式
+*  animation-delay: time;//延时
+*  animation-iteration-count: infinite|数字;//循环次数，infinite无数次
+* animation-direction: normal|reverse|alternate|;//检索或设置对象在循环中是否反向运动
+* animation-fill-mode:none|forwards|backwards|both ;//规定当动画不播放时，要用应到的元素样式
+* animation-play-state:paused|running ;//指定动画是否正在运行或者暂停
+* @keyframes
+> 关键帧，可以指定任何顺序排列来决定animation动画变化的关键位置
+```
+@keyframes mymove
+{
+    from {top:0px;}
+    to {top:200px;}
+}
+
+@keyframes mymove2
+{
+    0%   {top:0px;}
+    25%  {top:200px;}
+    50%  {top:100px;}
+    75%  {top:200px;}
+    100% {top:0px;}
+}
+
+```
+* will-change
+> 提前通知浏览器元素将要做什么动画，让浏览器提前准备合适的优化设置
+> 增强页面渲染性能，css的动画、变形、渐变并不会自动触发GPU加速，而是使用浏览器稍慢的软件渲染引擎（除非是3d转换),代价是占用RAM和GPU存储空间
+```
+  will-change: auto|scroll-position|contents|<custom-ident>|<animateable-feature>;
+  auto:没有特定的意图，适用于他通常所做的任何启发式和优化；
+  scroll-position:表示将要改变元素的位置；
+  contents:表示将要改变元素的内容
+  <custom-ident>:明确指定将要改变的属性与给定的名称
+  <animateable-feature>:  可动画的一些特征值，比如left、top、margin等
+
+```
+
+#### css3多列属性（columns)
+> 设置或检索对象的列数和每列的宽度，是一个复合属性
+```
+columns:每列的宽度 列数;
+```
+
+
 
 ### 三、单位
 * vm
@@ -150,3 +317,7 @@ border-radius:50%
 * em
 >相对长度单位。相对于当前对象内文本的字体尺寸。如当前对行内文本的字体尺寸未被人为设置，则相对于浏览器的默认字体尺寸。
 
+### 四、css优化
+* position-fixed代替background-attachment;
+* 带图片的元素放在伪元素中
+* 巧用will-change

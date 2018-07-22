@@ -2,10 +2,15 @@
 ### 一、选择器
 #### 常用的（IE8以上）
 1.* 通配符选择器
+
 2.,,,群组选择器
+
 3.> 子选择器
+
 4.+ 选择元素后紧跟的第一个兄弟元素
+
 5.~ 选择元素后所有紧跟的所有兄弟元素
+
 6.属性选择器、属性包含选择器
 ```
     //选择类型为text的input
@@ -36,13 +41,18 @@ a:visited{};
 input:focus{}
 ```
 1.link 锚点伪类（a)
+
 2.hover 鼠标移入后的颜色（a)
+
 3.active 按下后的颜色（a)
+
 4.visited 访问后的颜色（a);
+
 5.focus 获取焦点后(input)
 
 #### UI元素状态伪类(IE9以上）
 > 我们把":enabled",":disabled",":checked"伪类称为UI元素状态的伪类
+
 1.disabled 主要用在input
 ```
 <style>
@@ -55,11 +65,17 @@ input:focus{}
 #### nth选择器
 ##### 基本类
 1.:first-child 选择属于其父元素的首个子元素的每个Elenent元素
+
 2.:last-child 选择属于其父元素的最后子元素的每个Elenent元素
+
 3.:nth-child(n) 选择器匹配属于其父元素的第n个子元素，不论元素的类型
+
 4.:nth-last-child(n)  //从后往前匹配
+
 5.nth-of-child //匹配特定类型的
+
 6.nth-last-of-type //从后往前匹配
+
 7.only-child //匹配作为子元素唯一的子元素
 #####  关于参数n
 > 可以巧妙的利用n

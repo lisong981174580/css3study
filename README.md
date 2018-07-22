@@ -300,13 +300,71 @@ transform: matrix(a,b,c,d,tx,ty);
   <animateable-feature>:  可动画的一些特征值，比如left、top、margin等
 
 ```
-
 #### css3多列属性（columns)
 > 设置或检索对象的列数和每列的宽度，是一个复合属性
-```
-columns:每列的宽度 列数;
-```
+> columns:每列的宽度 列数;
+* column-gap:<length>|normal;
+> 设置检索对象的列与列之间的间距
+* column-rule
+> 设置检索列与列之间的边框
+* colum-span
+> 设置或检索对象元素是否横跨所有的列
+* column-fill
+> 设置或检索所有对象所有列的高度是否统一
+* column-break-before
+> 设置或检索对象之前是否断行
 
+#### css3用户界面
+* appearance:none|button|button-bevel....;
+> 设置或检索外观按照本地默认样式
+* text-overflow:clip|ellipsis
+> 当块级<overflow>为非visible时，定义内联内容溢出其块容器是否截断
+> clip:当内联内容溢出块容器时，将溢出部分裁剪掉
+> ellipsis:当内联内容溢出块容器时，将溢出部分替换为（...)
+```
+.box{
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+```
+* outline:宽度|样式|颜色
+> 指定轮廓边框的宽度、样式和颜色
+> 设置或检索对象外的线条轮廓，不占用布局空间
+* outline-width:10px;
+> 定义轮廓宽度
+* outline-color:<color>|invert;invert(使用背景色的反色);
+> 轮廓颜色
+* outline-style:none|dotted|solid;
+> 轮廓样式
+* outline-offset:<length>;
+> 轮廓偏移值
+
+* nav-index:auto|<number>;
+> 设置检索对象的导航顺序
+
+* cursor
+> 设置鼠标光标样式
+
+* zoom：normal|<number>|percenttage
+> 设置或检索对象的缩放比例
+
+* box-sizing:boder-box|content-box;
+> 设置或检索对象的盒模型组成模式
+
+* resize：none|both|horizontal|vertical
+> 设置或检索对象区域是否允许用户缩放，调节元素尺寸比大小
+
+* ime-mode：auto|normal|active|inactive|disabled
+> 设置或检索是否允许用户激活输入中文、韩文、日文等输入法状态
+
+* user-select：none|text|all|element
+> 内容是否允许复制
+
+* pointer-events
+> 设置或检索在何时成为属性事件的taraget
 
 
 ### 三、单位

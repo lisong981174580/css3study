@@ -51,7 +51,7 @@ input:focus{}
 </style>
 <input type="text" disable="disable">
 <input type="text" >
-
+```
 #### nth选择器
 ##### 基本类
 1.:first-child 选择属于其父元素的首个子元素的每个Elenent元素

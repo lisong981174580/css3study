@@ -176,6 +176,13 @@ box-shadow:50px 30px 0 0 yellow inset;//水平偏移 垂直偏移 模糊程度 �
 * word-break:normal|break-all|keep-all;//规定文本自动换换行的处理方法
 * word-wrap:normal|break-word; //允许长单词或url地址换行到下一行
 * text-align-last:auto|left|right|center|justify|start|end|initial|inherit;//文本最后一行的对齐方式
+*  white-space: nowrap
+> 禁止文本换行
+```
+ .ant-table td ,.ant-table th{ 
+    white-space: nowrap;
+ }
+```
 
 #### 字体属性
 > 字体库网址：https://www.fontsquirrel.com/tools/webfont-generator
@@ -329,13 +336,6 @@ transform: matrix(a,b,c,d,tx,ty);
     text-overflow: ellipsis;
 }
 
-```
-*  white-space: nowrap
-> 禁止文本换行
-```
- .ant-table td ,.ant-table th{ 
-    white-space: nowrap;
- }
 ```
 * outline:宽度|样式|颜色
 > 指定轮廓边框的宽度、样式和颜色

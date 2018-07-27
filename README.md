@@ -330,6 +330,13 @@ transform: matrix(a,b,c,d,tx,ty);
 }
 
 ```
+*  white-space: nowrap
+> 禁止文本换行
+```
+ .ant-table td ,.ant-table th{ 
+    white-space: nowrap;
+ }
+```
 * outline:宽度|样式|颜色
 > 指定轮廓边框的宽度、样式和颜色
 > 设置或检索对象外的线条轮廓，不占用布局空间

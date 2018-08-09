@@ -270,7 +270,7 @@ transform: matrix(a,b,c,d,tx,ty);
 > 视觉暂留原理 0.34s
 *  animation-name:keyfreamename|none; //动画名称
 *  animation-duration: time;//动画持续时间
-*  animation-timing-function: ease|liner|ease-in(很多）;//动画方式
+*  animation-timing-function: ease|linear|ease-in(很多）;//动画方式
 *  animation-delay: time;//延时
 *  animation-iteration-count: infinite|数字;//循环次数，infinite无数次
 * animation-direction: normal|reverse|alternate|;//检索或设置对象在循环中是否反向运动
